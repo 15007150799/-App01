@@ -13,7 +13,7 @@
           <i></i>{{navList.bulletin}}
       </div>
       <div v-show="!detailShow" class="seller"> <seller :hoverFlag="hoverFlag"></seller></div>
-
+      <div class="background"><img :src="navList.avatar" width="100%" height="100%" alt="1"></div>
       <div v-show="detailShow">
          <div class="detail-hidden">
             <div class="detail-wrap">
@@ -112,8 +112,6 @@ import seller from './seller.vue'
   top 0px
   width 100%
   background rgba(7,17,27,0.5)
-  blur 10px
-  z-index 1
   .seller
    position relative
    top 0px
@@ -159,9 +157,9 @@ import seller from './seller.vue'
       margin-right 4px
   .header-cl
     float right 
-    margin-right 24px
-    cursor pointer
+    position relative
     span
+      cursor pointer
       display inline-block
       width 48px
       height 24px
@@ -172,8 +170,9 @@ import seller from './seller.vue'
       border-radius 32px
       text-align center
       font-weight 200
-      vertical-align bottom
-      text-decoration none
+      position absolute
+      top 70px
+      right 12px
   .ad
    width 100%
    height 28px
@@ -194,7 +193,14 @@ import seller from './seller.vue'
     background-size 20px 14px
     margin-left 12px
     margin-right 4px
-   
+  .background
+   position absolute
+   top 0
+   left 0
+   width 100%
+   height 100%
+   z-index -1
+   filter blur(10px)
 .detail-hidden
  position absolute
  left 0

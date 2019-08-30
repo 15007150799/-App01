@@ -2,10 +2,9 @@
   <div id="good">
     <Home></Home>
    <div id="goods">
-   <div class="good-title" >
-   <h6>热销排行榜</h6>
-   <ul   v-if="contentData!=null && contentData.length>0" class="title-goods" ref="goodTitle">
-       <li  class="title-item" v-for="item,index in contentData" @click.stop.prevent="changeContent(index,item)">
+   <div class="good-title" ref="goodTitle">
+   <ul   v-if="contentData!=null && contentData.length>0" class="title-goods" >
+       <li  class="title-item" v-for="(item,index) in contentData" @click.stop.prevent="changeContent(index,item)">
           <span>{{item.name}}</span>
        </li>
    </ul>
@@ -56,7 +55,7 @@ export default({
          i:0,
          selectFood:{},
          imgSrc:'',
-        //  foodShowFlag:true
+        //  foodShowFlag:false
         //  num:0
         }
     },
@@ -214,9 +213,8 @@ export default({
   line-height 14px
   text-align center
   .title-goods
-   list-style none
+    width 100%
    .title-item
-    list-style none
     width 100%
     background #f3f5f7
     span 
@@ -228,6 +226,8 @@ export default({
      border-bottom 1px solid rgba(7,17,27,0.1)
      margin  0px 12px 0 12px
      padding-top 20px
+    &:first-child
+      background red
     &:last-child
       padding-top none
       border-bottom none 

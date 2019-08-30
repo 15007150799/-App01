@@ -1,6 +1,6 @@
 <template>
   <transition name="fold"><!--transition="fold"-->
-   <div  id="food"  v-show="foodShowFlag"  ref="foodWrapper">
+   <div  id="food"  v-if="foodShowFlag"  ref="foodWrapper">
        <div class="wrap">
             <div class="food-top">
             <span class="back" @click.stop.prevent="back()">&#9668</span>
